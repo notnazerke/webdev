@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <title>Instagram</title>
+    <meta charset="utf-8">
+    <style>
+        
+        /*blue #0095f6*/
+        *{
+            margin-left: 8%;
+            margin-top: 1%;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        html{
+
+            background-color: #fafafa;
+        }
+        .content{
+            width: 25%;
+            float: left;
+        }
+
+
+        #input-box{
+            width: 30%;
+            margin-top: 3%;
+        }
+
+        #sign-in{
+            background-color: white;
+            border: 1px solid #e4e3e3;
+        }
+
+        #sign-up{
+            border: 1px solid #e4e3e3;
+            background-color: white;
+            font-size: 14px;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+
+        #inst-logo{
+            margin-left: 25%;
+            margin-top: 10%;
+            margin-bottom: 8%;
+        }
+
+        input{
+            background-color: #fafafa;
+            border: 1px solid #e4e3e3;
+            border-radius: 3px;
+            width: 85%;
+            height: 40px;
+            padding-left: 10px;
+            margin-bottom: 5px;
+            font-size: 11px;
+        }
+
+        input:focus{
+            outline: none;
+            border: 1px solid gray;
+        }
+        button{
+            width: 85%;
+            height: 40px;
+            background-color: #0095f6;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 15px;
+            color: white;
+        }
+        
+        #or{
+            color: gray;
+            font-size: 12px;
+            padding-left: 25px;
+            margin-top: 5%;
+        }
+
+        #facebook{
+            margin-left: 13%;
+            margin-top: -5%;
+            margin-bottom: 5%;
+            color: #383d86;
+        }
+        #fb-logo{
+            float: left;
+            margin-right: 2%;
+            margin-left: 11%;
+        }
+        #fb-sign-in{
+            padding-top: 1%;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .fp{
+            text-align: center;
+            margin-left: 31%;
+            font-size: 12px;
+            margin-bottom: 10%;
+            color: black;
+            text-decoration: none;
+        }
+
+        #registr{
+            margin-left: 0%;
+            color: #0095f6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        #app{
+            text-align: center;
+            padding-top: 5%;
+        }
+        .img-app-store{
+            float: left;
+        }
+
+
+    </style>
+
+<body>
+    <div class="content">
+        <img src="phones.png" alt="inst" width="400px">
+    </div>
+
+    <div id="input-box" class="content">
+        <div id="sign-in">
+            <img id="inst-logo" src="Instagram-wordmark-01.png" alt="inst-logo" width="175px">
+        
+            <input type="email" placeholder="Номер телефона, имя пользователя или эл. адрес" required>
+            <input type="password" placeholder="Пароль" required>
+            <button >Войти</button>
+            
+            <div id="or">
+                <p>——————  &ensp; ИЛИ &ensp;  ——————</p>
+            </div>
+
+            <a href="" style="text-decoration: none;">
+                
+                <div id="facebook"> 
+                <img id="fb-logo" src="Facebook-02.png" width="15px">
+                <h4 id="fb-sign-in">Войти через Facebook</h4>
+            </div>
+        </a>
+            <p><a class="fp" href="https://www.instagram.com/accounts/password/reset/">Забыли пароль?</a></p>
+        </div>
+
+        <div id="sign-up">
+            <p>У вас еще нет аккаунта? <a id="registr" href="https://www.instagram.com/accounts/emailsignup/">Зарегестрироваться</a></p>
+        </div>
+
+        <div id="app">
+            <p style="margin-left: 0%;">Установите приложение.</p>
+                <a class="img-app-store" href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"><img src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_russian-ru.png/bfba6d0fd6bd.png" width="130px"></a>
+                <a class="img-app-store" href=""><img src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_russian-ru.png/4c70948c09f3.png" width="130px"></a>    
+           
+        </div>
+       
+        
+        
+    </div>
+    
+</body>
+<!--
+<footer>
+    <div id="footer-cont">
+        <ol>
+            <li><a href="#">Meta</a></li>
+            <li><a href="#">Информация</a></li>
+            <li><a href="#">Блог</a></li>
+            <li><a href="#">Вакансии</a></li>
+            <li><a href="#">Помощь</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">Конфиденциальность</a></li>
+            <li><a href="#">Условия</a></li>
+            <li><a href="#">Популярные аккаунты</a></li>
+            <li><a href="#">Хэштеги</a></li>
+            <li><a href="#">Места</a></li>
+            <li><a href="#">Instagram Lite</a></li>
+            <li><a href="#">Красота</a></li>
+            <li><a href="#">Танцы</a></li>
+            <li><a href="#">Фитнес</a></li>
+            <li><a href="#">Еда и напитки</a></li>
+            <li><a href="#">Дом и сад</a></li>
+            <li><a href="#">Музыка</a></li>
+            <li><a href="#">Изобразительное искусство</a></li>
+        </ol>
+
+        <ol>
+            <li>Русский</li>
+            <li>© 2022 Instagram from Meta</li>
+        </ol>
+    </div>
+</footer>
+-->
+
+</html>
