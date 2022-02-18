@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        header{
+            background-color: black;
+            color: gray;
+            margin: 0%;
+            padding: 1% 0% 1% 5%;
+        }
+        body{
+            margin: 0%;
+        }
+        #content{
+            width: 70%;
+            margin-left: 15%;
+        }
+        #inp-tasks p{
+            font-size: 30px;
+        }
+        #new-task{
+            width: 60%;
+            margin-left: 10%;
+            padding: 1% 0% 1% 1%;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+        }
+        #addButton{
+            margin-left: 2%;
+            padding: 1% 1.5% 1% 1.5%;
+            color: white;
+            background-color: #337ab7;
+            border-radius: 5px;
+            border: none;
+        }
+        #tasks{
+            margin-top: 5%;
+        }
+        .chbx{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 3% 0% 3% 1%;
+            border: 1px solid lightgray;
+        }
+        .chbx.checked .description{
+            text-decoration: line-through;
+        }
+        .description{
+            margin-left: 5%;
+        }
+        .trashbtn{
+            margin-right: 2%;
+            border: none;
+            background-color: white;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<header>
+    <small>ToDo List</small>
+</header>
+<body>
+    <div id="content">
+        <div id="inp-tasks">
+        <p>ToDo List</p>
+        <input type="text" id="new-task" placeholder="New Task">
+        <button id="addButton">Add</button>
+        </div>
+    
+        <div id="tasks">
+            <div class="chbx">
+                <div class="description">
+                <input onclick="completedTask()" class="checkbtn" type="checkbox">
+                Task1
+                </div>
+                <button onclick="deleteTask()" class="trashbtn"><img src="garbage.png" width="20px"></button>
+            </div>
+        </div>
+</div>
+</body>
+
+<script>
+    const addTaskButton = document.getElementById('addButton');
+    const taskTXT = document.getElementById('new-task');
+    const tasksDiv = document.getElementById('tasks');
+
+    let tasks=[];
+    let tasksDivLists=[];
+
+
+    function Task(description){
+        this.description = description;
+        this.completed = false;
+    }
+
+    const createTempl = (task, ind) => {
+        return `
+                <div class="chbx">
+                    <div class="description">
+                    <input onclick="completedTask(${ind})" class="checkbtn" type="checkbox" ${task.completed ? 'checked' : ''}>
+                    ${task.description}
+                    </div>
+                    <button onclick="deleteTask(${ind})" class="trashbtn"><img src="garbage.png" width="20px"></button>
+                </div>
+        `
+    }
+
+
+    const fillHtmlList = () => {
+        tasksDiv.innerHTML="";
+        if(tasks.length>0){
+            tasks.forEach((i,j) =>{
+                tasksDiv.innerHTML += createTempl(i,j);
+            });
+            tasksDivLists = document.querySelectorAll('.chbx');
+        }
+    }
+
+    const completedTask = ind => {
+        tasks[ind].completed = !tasks[ind].completed;
+        if(tasks[ind].completed){
+            tasksDivLists[ind].classList.add('checked');
+        } else{
+            tasksDivLists[ind].classList.remove('checked');
+        }
+    }
+
+    const deleteTask = ind => {
+        tasks.splice(ind, 1);
+        fillHtmlList();
+    }
+
+    addTaskButton.addEventListener('click', () => {
+        tasks.push(new Task(taskTXT.value));
+        console.log(tasks);
+        fillHtmlList();
+        taskTXT.value = '';
+    })
+
+
+
+</script>
+
+</html>
